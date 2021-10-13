@@ -37,3 +37,5 @@ df = pd.read_csv("/content/adult.csv")
 # step 2 : Problem description
 
 ![alt text](https://github.com/Tdpro1612/tutorial_data_science/blob/3e76b82f476e7bc159f0169bd8d75e962edbe74a/dt/anh1.jpg)
+
+#IS updating
