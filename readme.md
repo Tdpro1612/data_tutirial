@@ -36,17 +36,3 @@ df = pd.read_csv("/content/adult.csv")
 
 # step 2 : Problem description
 
-```
-df.info()
-```
-
-```
-df.head()
-```
-
-```
-df['workclass'].value_counts()
-```
-```
-df['education'].value_counts()
-```
