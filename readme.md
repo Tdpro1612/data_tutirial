@@ -108,6 +108,9 @@ plt.show()
 ![anh21](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh22.jpg)
 
 you can see have 8 feature have affection of income : 'age','education','education.num','race','sex','capital.gain','capital.loss','hours.per.week' (>0.05)
+
+Scale all features
+
 ```
 from sklearn.preprocessing import StandardScaler
 for col in X.columns:
@@ -115,7 +118,9 @@ for col in X.columns:
   X[col] = scaler.fit_transform(X[col].values.reshape(-1, 1))
 ```
 
+```
 round(Y.value_counts(normalize=True) * 100, 2).astype(str) + "%"
+```
 
 ![anh13](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh13.jpg)
 
@@ -133,6 +138,8 @@ Y_resampled = pd.DataFrame(Y_resampled, columns=Y.columns)
 ```
 round(Y_resampled.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 ```
+![anh23](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh23.jpg)
+
 ## train model
 
 we build all model to see this
