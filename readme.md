@@ -321,3 +321,99 @@ Random Forest Classifier
 accuracy 83.32
 f1 83.92
 ```
+
+## step6 : Hyperparameter tuning
+```
+from sklearn.model_selection import RandomizedSearchCV
+```
+```
+n_estimators = [int(x) for x in np.linspace(start=40,stop=150,num=15)]
+max_depth = [int(x) for x in np.linspace(start=40,stop=150,num=15)]
+```
+```
+para_dict = {
+    'n_estimators' : n_estimators,
+    'max_depth' : max_depth
+}
+```
+```
+rf_tune = RandomForestClassifier(random_state=101)
+rf_cv = RandomizedSearchCV(estimator=rf_tune, param_distributions=para_dict, cv=5, random_state=101)
+rf_cv.fit(X_train,y_train.values.ravel())
+```
+```
+RandomizedSearchCV(cv=5, error_score=nan,
+                   estimator=RandomForestClassifier(bootstrap=True,
+                                                    ccp_alpha=0.0,
+                                                    class_weight=None,
+                                                    criterion='gini',
+                                                    max_depth=None,
+                                                    max_features='auto',
+                                                    max_leaf_nodes=None,
+                                                    max_samples=None,
+                                                    min_impurity_decrease=0.0,
+                                                    min_impurity_split=None,
+                                                    min_samples_leaf=1,
+                                                    min_samples_split=2,
+                                                    min_weight_fraction_leaf=0.0,
+                                                    n_estimators=100,
+                                                    n_jobs...
+                                                    oob_score=False,
+                                                    random_state=101, verbose=0,
+                                                    warm_start=False),
+                   iid='deprecated', n_iter=10, n_jobs=None,
+                   param_distributions={'max_depth': [40, 47, 55, 63, 71, 79,
+                                                      87, 95, 102, 110, 118,
+                                                      126, 134, 142, 150],
+                                        'n_estimators': [40, 47, 55, 63, 71, 79,
+                                                         87, 95, 102, 110, 118,
+                                                         126, 134, 142, 150]},
+                   pre_dispatch='2*n_jobs', random_state=101, refit=True,
+                   return_train_score=False, scoring=None, verbose=0)
+```
+```
+rf_cv.best_score_
+# 0.8302739212679107
+```
+```
+rf_cv.best_params_
+# {'max_depth': 63, 'n_estimators': 110}
+```
+```
+rf_best = RandomForestClassifier(max_depth=63,n_estimators=110,random_state=101)
+rf_best.fit(X_train,y_train.values.ravel())
+```
+```
+RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=63, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=110,
+                       n_jobs=None, oob_score=False, random_state=101,
+                       verbose=0, warm_start=False)
+```
+```
+y_pred_best = rf_best.predict(X_test)
+```
+```
+print("Random Forest Classifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_best)*100,2))
+print("f1",round(f1_score(y_test,y_pred_best)*100,2))
+```
+```
+Random Forest Classifier
+accuracy 83.32
+f1 83.92
+```
+```
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_test,y_pred_best)
+```
+```
+plt.style.use('default')
+sns.heatmap(cm, annot=True, fmt='d',cmap='YlGnBu')
+plt.savefig('heatmap.png')
+plt.show()
+```
+![heatmap](https://github.com/Tdpro1612/tutorial_data_science/blob/b69ad9faf6405bebcc9047a6ebd2677c90d5a97d/dt/heatmap.png)
