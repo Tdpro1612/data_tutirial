@@ -69,7 +69,7 @@ the white ,black skin is very much
 ![anh18](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh18.jpg)
 
 
-the best of hour per week is 40
+the most of the hours per week is 40
 
 
 ![anh19](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh19.jpg)
@@ -105,12 +105,26 @@ ax = sns.heatmap(corr,cmap='RdYlGn', mask=mask, vmax=.3,annot=True)
 plt.show()
 ```
 
-![anh13](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh13.jpg)
-
 ![anh21](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh22.jpg)
 
 you can see have 8 feature have affection of income : 'age','education','education.num','race','sex','capital.gain','capital.loss','hours.per.week' (>0.05)
 
+![anh13](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh13.jpg)
+
+```
+from imblearn.over_sampling import RandomOverSampler
+ros = RandomOverSampler(random_state=101)
+ros.fit(X,Y.values.ravel())
+
+X_resampled, Y_resampled = ros.fit_resample(X,Y.values.ravel())
+
+X_resampled = pd.DataFrame(X_resampled, columns=X.columns)
+
+Y_resampled = pd.DataFrame(Y_resampled, columns=Y.columns)
+```
+```
+round(Y_resampled.value_counts(normalize=True) * 100, 2).astype(str) + "%"
+```
 #### build model
 we build all model to see this
 - linear regression
