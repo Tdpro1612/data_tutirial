@@ -125,7 +125,7 @@ round(Y.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 
 ![anh13](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh13.jpg)
 
-the rate of label is imbalance
+the rate of label is imbalance,we use random Over sample to get more the values of data is less than
 
 ```
 from imblearn.over_sampling import RandomOverSampler
@@ -144,7 +144,8 @@ round(Y_resampled.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 ![anh23](https://github.com/Tdpro1612/tutorial_data_science/blob/a4f2fcd0f64b7c34263b95f4bb4cb40e4469f9f2/dt/anh23.jpg)
 
 the rate of label is balance
-** Now,We can train !!! **
+
+**Now,We can train !!!**
 ## train model
 
 we build all model to see this
