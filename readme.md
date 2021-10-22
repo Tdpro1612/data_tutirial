@@ -417,3 +417,5 @@ plt.savefig('heatmap.png')
 plt.show()
 ```
 ![heatmap](https://github.com/Tdpro1612/tutorial_data_science/blob/b69ad9faf6405bebcc9047a6ebd2677c90d5a97d/dt/heatmap.png)
+
+**Wow,We have completed a tutorial of data science**
