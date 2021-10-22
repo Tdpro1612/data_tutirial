@@ -146,7 +146,7 @@ round(Y_resampled.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 the rate of label is balance
 
 **Now,We can train !!!**
-## train model
+## step 5 : train model
 
 we build all model to see this
 - logistic regression
@@ -250,4 +250,74 @@ RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
 y_pred_rfc = rfc.predict(X_test)
 ```
 
-## step 4 : show accuracy,score,fine tuning model
+## step 6 : Accuracy,f1 score
+```
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
+```
+- LogisticRegression
+```
+print("LogisticRegression")
+print("accuracy",round(accuracy_score(y_test,y_pred_log_reg)*100,2))
+print("f1",round(f1_score(y_test,y_pred_log_reg)*100,2))
+```
+```
+LogisticRegression
+accuracy 76.16
+f1 75.81
+```
+- KNeighborsClassifier
+```
+print("KNeighborsClassifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_knn)*100,2))
+print("f1",round(f1_score(y_test,y_pred_knn)*100,2))
+```
+```
+KNeighborsClassifier
+accuracy 79.19
+f1 79.9
+```
+- Support vector Classifier
+```
+print("Support vector Classifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_svc)*100,2))
+print("f1",round(f1_score(y_test,y_pred_svc)*100,2))
+```
+```
+Support vector Classifier
+accuracy 77.62
+f1 78.36
+```
+- Navie Bayes Classifier
+```
+print("Navie Bayes Classifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_nb)*100,2))
+print("f1",round(f1_score(y_test,y_pred_nb)*100,2))
+```
+```
+Navie Bayes Classifier
+accuracy 63.67
+f1 47.27
+```
+- Decision Tree Classifier
+```
+print("Decision Tree Classifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_dec_tree)*100,2))
+print("f1",round(f1_score(y_test,y_pred_dec_tree)*100,2))
+```
+```
+Decision Tree Classifier
+accuracy 82.66
+f1 83.14
+```
+- Random Forest Classifier
+```
+print("Random Forest Classifier")
+print("accuracy",round(accuracy_score(y_test,y_pred_rfc)*100,2))
+print("f1",round(f1_score(y_test,y_pred_rfc)*100,2))
+```
+```
+Random Forest Classifier
+accuracy 83.32
+f1 83.92
+```
