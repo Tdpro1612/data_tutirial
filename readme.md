@@ -55,14 +55,20 @@ But this data have some missing values "?"
 ## step3 : the exploratory data analyst
 
 ![anh14](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh14.jpg)
- the data have age of values between from 20-60,the values of 60+ is very few
+
+the data have age of values between from 20-60,the values of 60+ is very few
 
 ![anh15](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh15.jpg)
 
+the num of education is 9,10,13 take up large numbers
 
 ![anh16](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh16.jpg)
 
+the white ,black skin is very much
+
 ![anh17](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh17.jpg)
+
+the best of hour per week is 40
 
 ![anh18](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh18.jpg)
 
