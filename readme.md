@@ -78,6 +78,7 @@ the values of income have more than 50k focus on 37 to 59
 
 ## step 4 : preprocessing data
 ![anh12](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh12.jpg)
+
 you see this data not null file but this have some value is "?" 
 So we fill it by mod value because the values of data is imbalance and it have ratio is very small
 ```
@@ -124,6 +125,8 @@ round(Y.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 
 ![anh13](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh13.jpg)
 
+the rate of label is imbalance
+
 ```
 from imblearn.over_sampling import RandomOverSampler
 ros = RandomOverSampler(random_state=101)
@@ -140,6 +143,8 @@ round(Y_resampled.value_counts(normalize=True) * 100, 2).astype(str) + "%"
 ```
 ![anh23](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh23.jpg)
 
+the rate of label is balance
+** Now,We can train !!! **
 ## train model
 
 we build all model to see this
