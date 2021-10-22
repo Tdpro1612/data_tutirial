@@ -149,6 +149,105 @@ the rate of label is balance
 ## train model
 
 we build all model to see this
-- linear regression
+- logistic regression
+```
+from sklearn.linear_model import LogisticRegression
+log_reg = LogisticRegression(random_state=101)
+```
+```
+log_reg.fit(X_train,y_train.values.ravel())
+```
+```
+LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=100,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=101, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)
+```
+```
+y_pred_log_reg = log_reg.predict(X_test)
+```
+
+- KNN classifier
+```
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier()
+knn.fit(X_train,y_train.values.ravel())
+```
+```
+KNeighborsClassifier(algorithm='auto', leaf_size=30, metric='minkowski',
+                     metric_params=None, n_jobs=None, n_neighbors=5, p=2,
+                     weights='uniform')
+```
+```
+y_pred_knn = knn.predict(X_test)
+```
+- Support vector Classifier
+```
+from sklearn.svm import SVC
+svc = SVC(random_state=101)
+svc.fit(X_train,y_train.values.ravel())
+```
+```
+SVC(C=1.0, break_ties=False, cache_size=200, class_weight=None, coef0=0.0,
+    decision_function_shape='ovr', degree=3, gamma='scale', kernel='rbf',
+    max_iter=-1, probability=False, random_state=101, shrinking=True, tol=0.001,
+    verbose=False)
+```
+```
+y_pred_svc = svc.predict(X_test)
+```
+- Navie Bayes Classifier
+```
+from sklearn.naive_bayes import GaussianNB
+nb = GaussianNB()
+nb.fit(X_train,y_train.values.ravel())
+```
+```
+GaussianNB(priors=None, var_smoothing=1e-09)
+```
+```
+y_pred_nb = nb.predict(X_test)
+```
+- Decision Tree Classifier
+```
+from sklearn.tree import DecisionTreeClassifier
+dec_tree = DecisionTreeClassifier(random_state=101)
+dec_tree.fit(X_train,y_train)
+```
+```
+DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=101, splitter='best')
+```
+```
+y_pred_dec_tree = dec_tree.predict(X_test)
+```
+- Random Forest Classifier
+```
+from sklearn.ensemble import RandomForestClassifier
+rfc = RandomForestClassifier(random_state=101)
+rfc.fit(X_train,y_train.values.ravel())
+```
+```
+
+from sklearn.ensemble import RandomForestClassifier
+rfc = RandomForestClassifier(random_state=101)
+rfc.fit(X_train,y_train.values.ravel())
+RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=100,
+                       n_jobs=None, oob_score=False, random_state=101,
+                       verbose=0, warm_start=False)
+```
+```
+y_pred_rfc = rfc.predict(X_test)
+```
 
 ## step 4 : show accuracy,score,fine tuning model
