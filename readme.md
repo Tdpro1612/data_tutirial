@@ -66,13 +66,15 @@ the num of education is 9,10,13 take up large numbers
 
 the white ,black skin is very much
 
-![anh17](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh17.jpg)
+![anh18](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh18.jpg)
+
 
 the best of hour per week is 40
 
-![anh18](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh18.jpg)
 
 ![anh19](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh19.jpg)
+
+
 
 
 ## step 4 : preprocessing data, build model
