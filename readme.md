@@ -74,13 +74,12 @@ the best of hour per week is 40
 
 ![anh19](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh19.jpg)
 
-
-
+the values of income have more than 50k focus on 37 to 59
 
 ## step 4 : preprocessing data, build model
 ![anh12](https://github.com/Tdpro1612/tutorial_data_science/blob/f384eb9f4916096c0123f19661acad7151a5a67e/dt/anh12.jpg)
 you see this data not null file but this have some value is "?" 
-So we fill it by mod value because the value of data is imbalance.
+So we fill it by mod value because the values of data is imbalance and it have ratio is very small
 ```
 df = df.replace('?', np.nan)
 nan_cols = [i for i in df.columns if df[i].isnull().any()]
